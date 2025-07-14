@@ -7,11 +7,17 @@ const isProtectedRoute = createRouteMatcher([
   '/transformations(.*)',
 ]);
 
+const isPublicRoute = createRouteMatcher([
+  '/api/webhooks/clerk',
+]);
+
 export default clerkMiddleware(async (auth, req) => {
-  if (isProtectedRoute(req)) {
+  if (!isPublicRoute(req) && isProtectedRoute(req)) {
     await auth.protect();
   }
 });
+
+
 
 export const config = {
   matcher: [
