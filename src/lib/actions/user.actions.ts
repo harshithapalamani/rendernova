@@ -12,10 +12,13 @@ export async function createUser(user: CreateUserParams) {
     await connectToDatabase();
 
     const newUser = await User.create(user);
+    console.log("User created successfully:", newUser);
 
     return JSON.parse(JSON.stringify(newUser));
   } catch (error) {
+    console.error("Error creating user:", error);
     handleError(error);
+    return null;
   }
 }
 
