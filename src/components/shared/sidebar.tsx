@@ -14,7 +14,7 @@ const Sidebar = () => {
       <div className="flex size-full flex-col gap-4">
         <Link href="/" className="sidebar-logo">
           <Image src="/assets/images/logo.png" alt="logo" width={50} height={28} />
-          <span className="text-xl font-bold text-gray-800 ml-3">
+          <span className="text-xl font-bold text-white ml-3">
             RenderNova
           </span>
         </Link>
@@ -27,7 +27,7 @@ const Sidebar = () => {
 
                 return (
                   <li key={link.route} className={`sidebar-nav_element group ${
-                    isActive ? 'bg-purple-gradient text-white' : 'text-gray-800 hover:text-green-800'
+                    isActive ? 'bg-purple-gradient text-white' : 'text-gray-300 hover:text-white'
                   }`}>
                     <Link className="sidebar-link" href={link.route}>
                       <Image 
@@ -50,7 +50,7 @@ const Sidebar = () => {
 
                 return (
                   <li key={link.route} className={`sidebar-nav_element group ${
-                    isActive ? 'bg-purple-gradient text-white' : 'text-gray-800 hover:text-green-800'
+                    isActive ? 'bg-purple-gradient text-white' : 'text-gray-300 hover:text-white'
                   }`}>
                     <Link className="sidebar-link" href={link.route}>
                       <Image 
@@ -73,7 +73,7 @@ const Sidebar = () => {
           </SignedIn>
 
           <SignedOut>
-            <Link href="/sign-in" className="bg-purple-gradient text-white p-4 rounded-lg text-center block">
+            <Link href="/sign-in" className="bg-purple-gradient text-white p-4 rounded-xl text-center block">
               Login
             </Link>
           </SignedOut>

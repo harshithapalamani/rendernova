@@ -19,7 +19,7 @@ const MobileNav = () => {
           width={50}
           height={28}
         />
-        <span className="text-xl font-bold text-gray-800">RenderNova</span>
+        <span className="text-xl font-bold text-black">RenderNova</span>
       </Link>
 
       <nav className="flex gap-2">
@@ -47,7 +47,7 @@ const MobileNav = () => {
                     width={50}
                     height={28}
                   />
-                  <span className="text-lg font-bold text-gray-800">RenderNova</span>
+                  <span className="text-lg font-bold text-black">RenderNova</span>
                 </div>
 
                 <ul className="header-nav_elements">
@@ -56,7 +56,7 @@ const MobileNav = () => {
 
                     return (
                       <li 
-                        className={`${isActive ? 'gradient-text' : 'text-gray-700'} p-2 flex whitespace-nowrap`}
+                        className={`${isActive ? 'gradient-text' : 'text-gray-600'} p-2 flex whitespace-nowrap hover:text-black transition-colors`}
                         key={link.route}
                       >
                         <Link className="sidebar-link cursor-pointer w-full" href={link.route}>
@@ -82,7 +82,7 @@ const MobileNav = () => {
         </SignedIn>
 
         <SignedOut>
-          <Link href="/sign-in" className="bg-purple-gradient text-white px-4 py-2 rounded-lg">
+          <Link href="/sign-in" className="bg-purple-gradient text-white px-4 py-2 rounded-xl">
             Login
           </Link>
         </SignedOut>

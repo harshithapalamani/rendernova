@@ -18,10 +18,19 @@ const config: Config = {
           600: "#4318FF",
         },
         dark: {
-          400: "#7986AC",
-          500: "#606C80",
-          600: "#2B3674",
-          700: "#384262",
+          400: "#a3a3a3",
+          500: "#737373",
+          600: "#525252",
+          700: "#404040",
+          800: "#262626",
+          900: "#171717",
+        },
+        black: {
+          100: "#1a1a1a",
+          200: "#171717",
+          300: "#0f0f0f",
+          400: "#0a0a0a",
+          500: "#000000",
         },
       },
       fontFamily: {
@@ -33,6 +42,7 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "black-gradient": "linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #262626 100%)",
       },
       boxShadow: {
         "dropdown-shadow": "0 4px 30px rgba(0, 0, 0, 0.1)",
