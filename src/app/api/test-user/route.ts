@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { createUser } from "@/lib/actions/user.actions";
 
-export async function POST(req: Request) {
+export async function POST() {
   try {
     console.log("Testing manual user creation...");
     

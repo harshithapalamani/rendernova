@@ -13,7 +13,7 @@ export default async function HomePage() {
   let dbUser;
   try {
     dbUser = await getUserById(user.id);
-  } catch (error) {
+  } catch {
     // User doesn't exist in database, create them
     console.log("User not found in database, creating new user");
     
