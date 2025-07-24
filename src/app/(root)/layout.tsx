@@ -9,14 +9,14 @@ const Layout = ({children}: {children: React.ReactNode }) => {
     <main className="root">
       <Sidebar />
       <div className="root-container">
-        {/* Top Navbar for authenticated users */}
-        <header className="authenticated-navbar">
+        {/* Top Navbar for authenticated users - matching pre-signin style */}
+        <header className="navbar">
           <div className="navbar-container">
             <div className="navbar-brand">
               <h1 className="brand-text">RenderNova</h1>
             </div>
             <div className="navbar-auth">
-              <UserButton />
+              <UserButton afterSignOutUrl="/" />
             </div>
           </div>
         </header>
