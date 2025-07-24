@@ -62,43 +62,16 @@ const Home = async ({ searchParams }: SearchParamProps) => {
         </div>
       </section>
 
-      {/* Main Content - Gallery/Search */}
+      {/* Main Content - Gallery */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Explore <span className="text-gray-900">AI Creations</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-              Search and discover amazing AI-enhanced images from our community
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Discover amazing AI-enhanced images from our community
             </p>
-            
-            {/* Prominent Search Section */}
-            <div className="max-w-2xl mx-auto mb-12">
-              <div className="bg-gray-900 p-1 rounded-2xl shadow-xl">
-                <div className="bg-white rounded-xl p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4"> Search AI Images</h3>
-                  <div className="relative">
-                    <input
-                      type="text"
-                      placeholder="Search for images, styles, or effects..."
-                      className="w-full px-6 py-4 text-lg border-2 border-gray-300 rounded-xl focus:border-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200 transition-all duration-200"
-                    />
-                    <button className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-all duration-200 font-medium">
-                      Search
-                    </button>
-                  </div>
-                  <div className="flex flex-wrap gap-2 mt-4 justify-center">
-                    <span className="text-sm text-gray-500">Popular:</span>
-                    {['restore', 'enhance', 'remove background', 'recolor'].map((tag) => (
-                      <button key={tag} className="px-3 py-1 bg-gray-100 text-gray-900 rounded-full text-sm hover:bg-gray-200 transition-colors duration-200 border border-gray-200">
-                        {tag}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
           
           <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">

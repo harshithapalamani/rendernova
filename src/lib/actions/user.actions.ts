@@ -5,7 +5,6 @@ import type { CreateUserParams, UpdateUserParams } from "@/types";
 import User from "../database/models/user.model";
 import { connectToDatabase } from "../database/mongoose";
 import { handleError } from "../utils";
-import { clerkClient } from "@clerk/nextjs/server";
 
 // CREATE
 export async function createUser(user: CreateUserParams) {
@@ -31,37 +30,28 @@ export async function getUserById(userId: string) {
     let user = await User.findOne({ clerkId: userId });
 
     if (!user) {
-      // If user doesn't exist in database, try to create it from Clerk data
-      console.log("User not found in database, attempting to create from Clerk data");
+      // Create a minimal user if not found
+      console.log("User not found, creating minimal user record");
       
-      try {
-        const clerk = await clerkClient();
-        const clerkUser = await clerk.users.getUser(userId);
-        
-        if (clerkUser) {
-          const newUserData = {
-            clerkId: userId,
-            email: clerkUser.emailAddresses[0]?.emailAddress || '',
-            username: clerkUser.username || clerkUser.emailAddresses[0]?.emailAddress || 'user',
-            firstName: clerkUser.firstName || '',
-            lastName: clerkUser.lastName || '',
-            photo: clerkUser.imageUrl || '',
-          };
-          
-          user = await createUser(newUserData);
-          console.log("User created successfully from Clerk data");
-        }
-      } catch (clerkError) {
-        console.error("Error fetching user from Clerk:", clerkError);
-      }
+      const newUserData = {
+        clerkId: userId,
+        email: '',
+        username: `user_${userId.slice(-8)}`,
+        firstName: '',
+        lastName: '',
+        photo: '',
+      };
+      
+      user = await createUser(newUserData);
       
       if (!user) {
-        throw new Error("User not found and could not be created");
+        throw new Error("Failed to create user record");
       }
     }
 
     return JSON.parse(JSON.stringify(user));
   } catch (error) {
+    console.error("Error in getUserById:", error);
     handleError(error);
   }
 }
