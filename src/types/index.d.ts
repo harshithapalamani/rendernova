@@ -137,8 +137,8 @@ export type RemoveUrlQueryParams = {
 };
 
 export type SearchParamProps = {
-  params: { id: string; type: TransformationTypeKey };
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: Promise<{ id: string; type: TransformationTypeKey }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 export type TransformationFormProps = {
