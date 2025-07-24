@@ -41,7 +41,8 @@ const Profile = async ({ searchParams }: SearchParamProps) => {
                     alt="credits"
                     width={32}
                     height={32}
-                    className="filter brightness-0"
+                    className="filter sepia saturate-200 hue-rotate-45 brightness-110"
+                    style={{ filter: 'sepia(1) saturate(2) hue-rotate(45deg) brightness(1.1)' }}
                   />
                 </div>
                 <div>
